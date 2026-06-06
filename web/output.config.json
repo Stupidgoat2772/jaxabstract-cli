@@ -1,0 +1,15 @@
+{
+  "profile": null,
+  "preset": "random",
+  "media": true,
+  "audio_source": "native",
+  "locked": false,
+  "preset_interval_sec": 300,
+  "preset_blend_sec": 2.7,
+  "terminal": {
+    "font_family": "'JetBrains Mono', 'Cascadia Mono', 'Fira Code', 'DejaVu Sans Mono', ui-monospace, monospace",
+    "font_size": 15,
+    "line_height": 1.15
+  },
+  "profiles": {}
+}

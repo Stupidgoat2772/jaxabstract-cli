@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+set -eu
+
+if [ -z "${JAXABSTRACT_COMMAND_FILE:-}" ]; then
+  printf 'jax: not running inside jaxabstract terminal\n' >&2
+  exit 1
+fi
+
+if [ "$#" -eq 0 ]; then
+  printf 'usage: jax help\n'
+  exit 0
+fi
+
+case "${1:-}" in
+  -h|--help|help)
+    set -- help
+    ;;
+esac
+
+printf '%s\n' "$*" >>"$JAXABSTRACT_COMMAND_FILE"
+
+# Let the renderer-side response arrive before the shell redraws the prompt.
+sleep "${JAXABSTRACT_COMMAND_WAIT:-0.18}"

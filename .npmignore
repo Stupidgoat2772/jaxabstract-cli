@@ -1,0 +1,11 @@
+node_modules/
+target/
+src-tauri/target/
+src-tauri/gen/schemas/
+dist/
+build/
+*.log
+*.tmp
+.env
+.env.*
+web/media/packs/

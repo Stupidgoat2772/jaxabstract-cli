@@ -1,0 +1,16 @@
+node_modules/
+target/
+src-tauri/target/
+src-tauri/gen/schemas/
+dist/
+build/
+*.log
+*.tmp
+.DS_Store
+
+# Local user/runtime config. The app copies defaults into ~/.config/jaxabstract.
+.env
+.env.*
+
+# Optional media packs are distributed remotely, not committed into the app.
+web/media/packs/

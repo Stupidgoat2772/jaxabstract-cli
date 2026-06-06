@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jaxabstract</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="viz"></canvas>
+  <div id="overlays"></div>
+
+  <div id="hud">
+    <div id="hud-controls">
+      <span>SPACE · next</span>
+      <span>← → · seek</span>
+      <span>L · lock</span>
+      <span>M · media</span>
+      <span>F · fullscreen</span>
+      <span>↑↓ · beat sens</span>
+    </div>
+  </div>
+
+  <div id="audio-picker">
+    <button id="btn-mic">mic</button>
+    <button id="btn-system">system</button>
+    <label id="btn-file">file<input type="file" id="file-input" accept="audio/*"></label>
+    <span id="audio-sep">|</span>
+    <button id="btn-play" style="display:none">▶</button>
+    <button id="btn-stop" style="display:none">■</button>
+    <canvas id="level-meter" width="60" height="16" title="audio level"></canvas>
+    <span id="preset-name"></span>
+  </div>
+
+  <!-- butterchurn: MilkDrop 2.25 emulator + preset packs (local) -->
+  <script src="vendor/butterchurn.min.js"></script>
+  <script src="vendor/butterchurnExtraImages.min.js"></script>
+  <script src="vendor/butterchurnPresets.min.js"></script>
+  <script src="vendor/butterchurnPresetsMD1.min.js"></script>
+  <script src="vendor/butterchurnPresetsExtra.min.js"></script>
+  <script src="vendor/butterchurnPresetsExtra2.min.js"></script>
+  <script src="vendor/butterchurnPresetsNonMinimal.min.js"></script>
+
+  <script src="engine/audio.js"></script>
+  <script src="engine/overlay.js"></script>
+  <script src="abstract.js"></script>
+
+</body>
+</html>

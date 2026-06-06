@@ -1,0 +1,46 @@
+{
+  "types": {
+    "video": {
+      "max_active": 2,
+      "opacity_range": [
+        0.15,
+        0.5
+      ],
+      "blend_mode": "screen",
+      "fade_in": 2,
+      "fade_out": 2,
+      "loop": true
+    },
+    "image": {
+      "max_active": 1,
+      "opacity_range": [
+        0.08,
+        0.25
+      ],
+      "blend_mode": "overlay",
+      "fade_in": 4,
+      "fade_out": 4
+    },
+    "sound": {
+      "max_active": 2,
+      "volume_range": [
+        0.05,
+        0.2
+      ],
+      "fade_in": 3,
+      "fade_out": 3,
+      "loop": true
+    }
+  },
+  "default_profile": null,
+  "bucket_limits": {
+    "visual": 2,
+    "animated": 1,
+    "still": 2,
+    "music": 1,
+    "sound": 2,
+    "audio": 1
+  },
+  "media": [],
+  "profiles": {}
+}

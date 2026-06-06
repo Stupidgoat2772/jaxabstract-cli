@@ -1,0 +1,40 @@
+{
+  "name": "jaxabstract-cli",
+  "version": "0.1.0",
+  "description": "Jaxabstract CLI/output host: MilkDrop renderer, native audio, and transparent shell.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stupidgoat2772/jaxabstract-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Stupidgoat2772/jaxabstract-cli/issues"
+  },
+  "homepage": "https://github.com/Stupidgoat2772/jaxabstract-cli#readme",
+  "bin": {
+    "jaxabstract-output": "bin/jaxabstract-output.js"
+  },
+  "files": [
+    "bin",
+    "scripts",
+    "src-tauri",
+    "web",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "tauri dev",
+    "output": "tauri dev",
+    "build": "tauri build",
+    "tauri": "tauri",
+    "install:linux": "bash scripts/install-linux.sh",
+    "uninstall:linux": "bash scripts/install-linux.sh --uninstall",
+    "check": "node --check bin/jaxabstract-output.js && node --check web/app-output.js && node --check web/abstract.js && node --check web/engine/audio.js && node --check web/engine/overlay.js && cargo check --manifest-path src-tauri/Cargo.toml"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.0",
+    "@xterm/xterm": "^6.0.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.2"
+  }
+}

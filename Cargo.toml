@@ -1,0 +1,35 @@
+[package]
+name = "jaxabstract-cli"
+version = "0.1.0"
+edition = "2021"
+description = "Audio-reactive terminal visualizer. ASCII and sixel/kitty modes. TUI-injectable."
+
+[[bin]]
+name = "jaxabstract-cli"
+path = "src/main.rs"
+
+[lib]
+name = "jaxabstract_cli"
+path = "src/lib.rs"
+
+[dependencies]
+ratatui     = "0.29"
+crossterm   = "0.28"
+image       = { version = "0.25", default-features = false, features = ["png"] }
+rustfft     = "6"
+num-complex = "0.4"
+noise       = "0.9"
+serde       = { version = "1", features = ["derive"] }
+serde_json  = "1"
+toml        = "0.8"
+tokio       = { version = "1", features = ["rt", "sync", "time"] }
+pipewire    = { version = "0.8", optional = true }
+
+[features]
+default        = []
+pipewire-audio = ["dep:pipewire"]
+
+[profile.release]
+opt-level     = 3
+lto           = true
+codegen-units = 1
