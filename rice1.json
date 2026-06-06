@@ -1,0 +1,718 @@
+{
+  "types": {
+    "video": {
+      "max_active": 2,
+      "opacity_range": [
+        0.15,
+        0.5
+      ],
+      "blend_mode": "screen",
+      "fade_in": 2,
+      "fade_out": 2,
+      "loop": true
+    },
+    "image": {
+      "max_active": 1,
+      "opacity_range": [
+        0.08,
+        0.25
+      ],
+      "blend_mode": "overlay",
+      "fade_in": 4,
+      "fade_out": 4
+    },
+    "sound": {
+      "max_active": 2,
+      "volume_range": [
+        0.05,
+        0.2
+      ],
+      "fade_in": 3,
+      "fade_out": 3,
+      "loop": true
+    }
+  },
+  "default_profile": "rice1",
+  "bucket_limits": {
+    "visual": 2,
+    "animated": 1,
+    "still": 2,
+    "music": 1,
+    "sound": 2,
+    "audio": 1
+  },
+  "media": [
+    {
+      "url": "https://i.pinimg.com/originals/f1/ae/7a/f1ae7a46b02e2befe5b69d83c2d0105f.gif",
+      "name": "Rice1 Lain Static Portrait",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "lain",
+        "portrait",
+        "closeup",
+        "school-uniform",
+        "glitch",
+        "static",
+        "scanlines",
+        "blue",
+        "dark",
+        "signal",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.2
+    },
+    {
+      "url": "https://i.pinimg.com/originals/4a/f7/96/4af796ba201b5443d8ea5e45614de3f2.gif",
+      "name": "Rice1 Lain Terminal Face",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "lain",
+        "portrait",
+        "closeup",
+        "terminal",
+        "glitch",
+        "static",
+        "scanlines",
+        "teal",
+        "cyan",
+        "dark",
+        "signal",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.2
+    },
+    {
+      "url": "https://i.pinimg.com/originals/d8/f3/81/d8f3815be820ec3a5fb8f8b902fcabc3.gif",
+      "name": "Rice1 Lain Noise Closeup",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "lain",
+        "portrait",
+        "closeup",
+        "face",
+        "glitch",
+        "static",
+        "scanlines",
+        "blue",
+        "dark",
+        "signal",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.2
+    },
+    {
+      "url": "https://i.pinimg.com/originals/69/ac/2b/69ac2bc7a0963b841e537a2fc1c062ca.gif",
+      "name": "Rice1 Wired Bedroom Rig",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "lain",
+        "room",
+        "bedroom",
+        "computer",
+        "monitor",
+        "cables",
+        "wired",
+        "blue",
+        "dark",
+        "crt",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.2
+    },
+    {
+      "url": "https://i.pinimg.com/736x/03/c2/4c/03c24c2bd8b6da1e781a4ee910f7e796.jpg",
+      "name": "Rice1 God Text Card",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "text-card",
+        "text",
+        "japanese",
+        "subtitle",
+        "god",
+        "blue",
+        "screen",
+        "crt",
+        "signal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/736x/96/21/01/9621012f280cb755ea6469288af2c789.jpg",
+      "name": "Rice1 Love Text Card",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "text-card",
+        "text",
+        "typography",
+        "love",
+        "layered",
+        "blue",
+        "screen",
+        "crt",
+        "signal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/1200x/d4/cd/ca/d4cdca96b2eafd45119e3d52f264a7c3.jpg",
+      "name": "Rice1 Electric Spider",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "spider",
+        "web",
+        "neon",
+        "electric",
+        "blue",
+        "dark",
+        "insectoid",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/736x/0a/30/20/0a3020f0ac0b162d3ceea604d0e098ec.jpg",
+      "name": "Rice1 Blue Spider",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "spider",
+        "macro",
+        "neon",
+        "blue",
+        "dark",
+        "black",
+        "insectoid",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/736x/e8/6e/f8/e86ef80eeda2fc394b4ccee662611b55.jpg",
+      "name": "Rice1 Web Spider",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "spider",
+        "web",
+        "linework",
+        "blue",
+        "dark",
+        "black",
+        "insectoid",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/736x/a1/32/58/a13258368f2a91b566aa85488a37610d.jpg",
+      "name": "Rice1 Blue Goldfish",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "fish",
+        "goldfish",
+        "aquatic",
+        "blue",
+        "cyan",
+        "black",
+        "ambient",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/originals/29/15/42/291542a81b3d8e0abf80b2ddf53551dc.gif",
+      "name": "Rice1 Night Commute",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "lain",
+        "profile",
+        "night",
+        "window",
+        "train",
+        "city-light",
+        "blue",
+        "dark",
+        "red-light",
+        "surveillance",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.2
+    },
+    {
+      "url": "https://i.pinimg.com/736x/68/62/df/6862dfc331325ee3ae30f3218e562c2d.jpg",
+      "name": "Rice1 Bedroom Silhouette",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "lain",
+        "room",
+        "bedroom",
+        "bed",
+        "silhouette",
+        "window",
+        "blue",
+        "dark",
+        "quiet",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/originals/e5/2b/56/e52b56b11965a61c6129f58f49dadac1.gif",
+      "name": "Rice1 Classroom Tracking",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "classroom",
+        "crowd",
+        "students",
+        "tracking",
+        "surveillance",
+        "face-box",
+        "glitch",
+        "signal",
+        "blue",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.2
+    },
+    {
+      "url": "https://i.pinimg.com/1200x/3c/eb/30/3ceb3037c994327d02d99938070a51d0.jpg",
+      "name": "Rice1 Snow Bridge Signal",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "bridge",
+        "snow",
+        "fog",
+        "liminal",
+        "blue",
+        "dark",
+        "horizon",
+        "quiet",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 0.9
+    },
+    {
+      "url": "https://i.pinimg.com/1200x/23/10/59/231059682b3685ac94a401e16106f6c4.jpg",
+      "name": "Rice1 Liquid Vortex Field",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "vortex",
+        "field",
+        "monochrome",
+        "storm",
+        "abstract",
+        "signal",
+        "dark",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 0.9
+    },
+    {
+      "url": "https://i.pinimg.com/1200x/24/84/f7/2484f72e9ea01b6d823c5107b11968d5.jpg",
+      "name": "Rice1 Wired Tangle",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "wired",
+        "powerline",
+        "cables",
+        "silhouette",
+        "tech",
+        "blue",
+        "dark",
+        "signal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/736x/cd/54/b4/cd54b49d78bf32222306bf42159768d3.jpg",
+      "name": "Rice1 Voice Mail UI",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "interface",
+        "ui",
+        "mail",
+        "voice-view",
+        "tech",
+        "blue",
+        "screen",
+        "crt",
+        "signal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/1200x/23/f5/5f/23f55f681ebd90884f121dc43aaac7ea.jpg",
+      "name": "Rice1 Accela Diagram",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "accela",
+        "diagram",
+        "device",
+        "tech",
+        "pharma",
+        "blue",
+        "green",
+        "screen",
+        "crt",
+        "signal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/1200x/6a/eb/f0/6aebf0e0221793c7a249efd70dc585f2.jpg",
+      "name": "Rice1 Remembered Text Card",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "text-card",
+        "text",
+        "japanese",
+        "subtitle",
+        "memory",
+        "black",
+        "white",
+        "screen",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/736x/70/bb/45/70bb45c31170091d929d4e88af082362.jpg",
+      "name": "Rice1 Blue Hanging Spider",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "spider",
+        "web",
+        "silhouette",
+        "blue",
+        "dark",
+        "macro",
+        "insectoid",
+        "signal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 1
+    },
+    {
+      "url": "https://i.pinimg.com/1200x/3f/5d/d8/3f5dd8f93f7b67522ecf6351c7551cfd.jpg",
+      "name": "Rice1 Orbital Storm",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "orbital",
+        "earth",
+        "storm",
+        "hurricane",
+        "space",
+        "blue",
+        "dark",
+        "vortex",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 0.9
+    },
+    {
+      "url": "https://i.pinimg.com/736x/fa/fd/24/fafd24e7c3098f373c850661618bd187.jpg",
+      "name": "Rice1 Grey Powerlines",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "powerline",
+        "street",
+        "wired",
+        "grey",
+        "fog",
+        "urban",
+        "liminal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 0.9
+    },
+    {
+      "url": "https://i.pinimg.com/736x/77/23/20/772320c9cdbe443e67a40db823f4740d.jpg",
+      "name": "Rice1 Steel Overpass",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "bridge",
+        "steel",
+        "overpass",
+        "infrastructure",
+        "blue",
+        "grey",
+        "urban",
+        "liminal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 0.9
+    },
+    {
+      "url": "https://i.pinimg.com/736x/fa/c6/33/fac633ba94dfdb57892281afe7041f86.jpg",
+      "name": "Rice1 Fisheye Wires",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "wired",
+        "powerline",
+        "street",
+        "fisheye",
+        "urban",
+        "grey",
+        "sky",
+        "signal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 0.9
+    },
+    {
+      "url": "https://i.pinimg.com/736x/ee/d3/70/eed370b9b563204df0db6c594b6de015.jpg",
+      "name": "Rice1 Black Rider Sky",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "figure",
+        "silhouette",
+        "rider",
+        "black",
+        "sky",
+        "tilted",
+        "surreal",
+        "dark",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 0.9
+    },
+    {
+      "url": "https://i.pinimg.com/originals/b1/4f/f5/b14ff5276be3f34d45182eac97d919a3.gif",
+      "name": "Rice1 Crosslight Figure",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "figure",
+        "streetlight",
+        "cross",
+        "night",
+        "blue",
+        "dark",
+        "surreal",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.1
+    },
+    {
+      "url": "https://i.pinimg.com/originals/17/02/ff/1702ff53481670e3db160497cfbfcf36.gif",
+      "name": "Rice1 Blue Cloud Figure",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "figure",
+        "cloud",
+        "sky",
+        "blue",
+        "dark",
+        "surreal",
+        "floating",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.1
+    },
+    {
+      "url": "https://i.pinimg.com/originals/92/a2/7d/92a27d4b2a01a684dbba4b8a15a6d5ab.gif",
+      "name": "Rice1 Pink Tower Pulse",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "tower",
+        "pulse",
+        "ring",
+        "pink",
+        "blue",
+        "surreal",
+        "horizon",
+        "signal",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.1
+    },
+    {
+      "url": "https://i.pinimg.com/originals/b6/2e/ee/b62eee345c6c5ed5be0f519ca5b90ed2.gif",
+      "name": "Rice1 Moon Dome",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "moon",
+        "dome",
+        "cloud",
+        "city",
+        "blue",
+        "dark",
+        "surreal",
+        "ring",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.1
+    },
+    {
+      "url": "https://i.pinimg.com/originals/33/da/e5/33dae5141ced6e5c9767fc63ff0d6ef6.gif",
+      "name": "Rice1 Teal Tower Descent",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "tower",
+        "elevator",
+        "descent",
+        "teal",
+        "cyan",
+        "blue",
+        "industrial",
+        "motion",
+        "gif",
+        "animated",
+        "pinterest"
+      ],
+      "weight": 1.1
+    },
+    {
+      "url": "https://i.pinimg.com/736x/a5/6b/5e/a56b5ef615dc6dcce2723ebe3c178550.jpg",
+      "name": "Rice1 Monochrome Ring",
+      "type": "image",
+      "tags": [
+        "rice1",
+        "ring",
+        "vortex",
+        "monochrome",
+        "black",
+        "white",
+        "abstract",
+        "signal",
+        "jpg",
+        "still",
+        "pinterest"
+      ],
+      "weight": 0.9
+    }
+  ],
+  "profiles": {
+    "rice1": {
+      "tags": [
+        "rice1"
+      ],
+      "description": "Blue signal room. Lain portraits, CRT text cards, spiders, fish, and surveillance cuts.",
+      "bucket_limits": {
+        "visual": 2,
+        "animated": 1,
+        "still": 2,
+        "audio": 1
+      },
+      "tag_limits": {
+        "lain": 1,
+        "spider": 1,
+        "text-card": 1,
+        "room": 1,
+        "crowd": 1
+      },
+      "types": {
+        "image": {
+          "max_active": 2,
+          "opacity_range": [
+            0.12,
+            0.35
+          ],
+          "blend_mode": "screen",
+          "fade_in": 2,
+          "fade_out": 2
+        },
+        "video": {
+          "max_active": 2,
+          "opacity_range": [
+            0.16,
+            0.42
+          ],
+          "blend_mode": "screen",
+          "fade_in": 2,
+          "fade_out": 2
+        }
+      }
+    }
+  }
+}
