@@ -96,7 +96,7 @@ npm run install:linux -- --with-rice1
 That downloads:
 
 ```text
-https://github.com/Stupidgoat2772/jaxabstract-cli/releases/latest/download/rice1.json
+https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json
 ```
 
 Override the pack URL:
@@ -156,7 +156,7 @@ The app loads config in this order:
 - packaged fallback media config: `web/media/media.json`
 
 The packaged media config is intentionally empty. Optional packs are remote JSON
-files. `rice1` is published as a GitHub Release asset and only written to
+files. `rice1` is published on the separate `packs` branch and only written to
 `~/.config/jaxabstract/media.json` when the user opts in.
 
 ## Output Config

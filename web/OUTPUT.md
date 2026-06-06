@@ -35,11 +35,11 @@ Install the optional `rice1` pack:
 npm run install:linux -- --with-rice1
 ```
 
-`rice1` is downloaded from the latest GitHub Release asset only when this option
-is used:
+`rice1` is downloaded from the separate `packs` branch only when this option is
+used:
 
 ```text
-https://github.com/Stupidgoat2772/jaxabstract-cli/releases/latest/download/rice1.json
+https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json
 ```
 
 Reset config back to a clean install:

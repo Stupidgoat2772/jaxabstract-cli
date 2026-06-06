@@ -19,7 +19,7 @@ USER_OUTPUT_CONFIG="${USER_CONFIG_DIR}/output.config.json"
 USER_MEDIA_CONFIG="${USER_CONFIG_DIR}/media.json"
 DEFAULT_OUTPUT_CONFIG="${APP_DIR}/web/output.config.json"
 DEFAULT_MEDIA_CONFIG="${APP_DIR}/web/media/media.json"
-RICE1_PACK_URL="${JAXABSTRACT_RICE1_PACK_URL:-https://github.com/Stupidgoat2772/jaxabstract-cli/releases/latest/download/rice1.json}"
+RICE1_PACK_URL="${JAXABSTRACT_RICE1_PACK_URL:-https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json}"
 
 RUN_NPM_INSTALL=1
 INSTALL_DESKTOP=1
