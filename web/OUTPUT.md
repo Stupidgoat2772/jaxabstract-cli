@@ -29,17 +29,16 @@ Fresh install, no media pack:
 npm run install:linux
 ```
 
-Install the optional `rice1` pack:
+Install a rice/media pack from a URL:
 
 ```bash
-npm run install:linux -- --with-rice1
+npm run install:linux -- --with-rice https://example.com/media.json
 ```
 
-`rice1` is downloaded from the separate `packs` branch only when this option is
-used:
+Example using Damian's `rice1` pack:
 
-```text
-https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json
+```bash
+npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json
 ```
 
 Reset config back to a clean install:
@@ -231,29 +230,6 @@ jax allowrandom off
 jax allowrandom toggle
 jax profile list
 jax profile load rice1
-```
-
-The longer shader namespace still works:
-
-```bash
-jax shader next
-jax shader prev
-jax shader random
-jax shader list
-jax shader allow
-jax shader deny
-jax shader favorite
-jax shader clear all
-```
-
-The shorter alias works too:
-
-```bash
-shader next
-shader allow
-shader deny
-shader favorite
-shader list
 ```
 
 ## JavaScript API

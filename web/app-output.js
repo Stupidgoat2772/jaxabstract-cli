@@ -138,13 +138,8 @@
       return;
     }
 
-    if (["next", "prev", "previous", "random", "allow", "deny", "favorite", "fav", "list", "clear"].includes(parts[0])) {
+    if (["next", "prev", "random", "allow", "deny", "favorite", "list", "clear"].includes(parts[0])) {
       handleShaderCommand(term, api, parts);
-      return;
-    }
-
-    if (parts[0] === "shader") {
-      handleShaderCommand(term, api, parts.slice(1));
       return;
     }
 
@@ -168,7 +163,7 @@
     if (action === "next") {
       state = api.nextPreset();
       writeShortStatus(term, state, "next");
-    } else if (action === "prev" || action === "previous") {
+    } else if (action === "prev") {
       state = api.prevPreset();
       writeShortStatus(term, state, "prev");
     } else if (action === "random") {
@@ -180,7 +175,7 @@
     } else if (action === "deny") {
       state = api.denyCurrentShader();
       writeRuleStatus(term, state, "denied");
-    } else if (action === "favorite" || action === "fav") {
+    } else if (action === "favorite") {
       state = api.favoriteCurrentShader(undefined, parts[1] ?? 1);
       writeRuleStatus(term, state, "favorited");
     } else if (action === "clear") {
@@ -189,7 +184,7 @@
     } else if (action === "list") {
       writeShaderStatus(term, state, "list");
     } else {
-      term.writeln(`\r\n[jax] unknown shader command: ${action}`);
+      term.writeln(`\r\n[jax] unknown command: ${action}`);
     }
   }
 
@@ -247,7 +242,6 @@
     term.writeln("  jax clear allow|deny|favorites|all");
     term.writeln("  jax allowrandom on|off|toggle|status");
     term.writeln("  jax profile list|load <name>");
-    term.writeln("  shader next | allow | deny | favorite | list");
   }
 
   function writeShortStatus(term, state, action) {
@@ -272,7 +266,7 @@
       .filter(([, weight]) => Number(weight) > 0)
       .sort((a, b) => Number(b[1]) - Number(a[1]));
     const mode = rules.allow_random === false ? "locked" : "curating";
-    term.writeln(`\r\n[jax] shader ${action}`);
+    term.writeln(`\r\n[jax] ${action}`);
     term.writeln(`[jax] current: ${state.preset ?? "(none)"}`);
     term.writeln(`[jax] profile: ${state.profile ?? "default"} | pool: ${state.presetCount} | mode: ${mode}`);
     term.writeln(`[jax] allow: ${allow.length ? allow.join(" | ") : "(empty)"}`);

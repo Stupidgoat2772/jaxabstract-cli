@@ -7,7 +7,8 @@ the terminal text.
 
 The default install starts fresh: shader output only, no media pack. Damian's
 `rice1` profile is an optional remote pack. It is not included in the package
-or cloned project; the installer downloads it only when `--with-rice1` is used.
+or cloned project; the installer downloads it only when users pass its pack URL
+to `--with-rice`.
 
 ## What It Does
 
@@ -79,7 +80,7 @@ jaxabstract-output
 
 Or open **Jaxabstract Output** from the desktop launcher.
 
-## Optional Rice1 Pack
+## Optional Rice Packs
 
 Default install starts fresh with no media overlays:
 
@@ -87,22 +88,16 @@ Default install starts fresh with no media overlays:
 npm run install:linux
 ```
 
-Install Damian's `rice1` media pack:
+Install a rice/media pack from a URL:
 
 ```bash
-npm run install:linux -- --with-rice1
+npm run install:linux -- --with-rice https://example.com/media.json
 ```
 
-That downloads:
-
-```text
-https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json
-```
-
-Override the pack URL:
+Example using Damian's `rice1` pack:
 
 ```bash
-npm run install:linux -- --with-rice1 --rice1-url https://example.com/rice1.json
+npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json
 ```
 
 Reset an existing install to clean starter config:
@@ -114,12 +109,12 @@ npm run install:linux -- --fresh --reset-config
 Reset an existing install to `rice1`:
 
 ```bash
-npm run install:linux -- --with-rice1 --reset-config
+npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json --reset-config
 ```
 
 Without `--reset-config`, the installer preserves existing user config where it
-can. `--with-rice1` intentionally updates the active media config and sets the
-profile to `rice1`.
+can. `--with-rice <url>` intentionally updates the active media config and sets
+the active profile from the pack's `default_profile` when one is provided.
 
 ## Uninstall
 
@@ -245,23 +240,6 @@ jax allowrandom off
 jax allowrandom toggle
 jax profile list
 jax profile load rice1
-```
-
-The longer namespace also works:
-
-```bash
-jax shader next
-jax shader allow
-jax shader deny
-jax shader favorite
-jax shader clear all
-```
-
-The `shader` shortcut also works:
-
-```bash
-shader next
-shader list
 ```
 
 ## Media Config

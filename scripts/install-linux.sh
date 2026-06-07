@@ -19,12 +19,12 @@ USER_OUTPUT_CONFIG="${USER_CONFIG_DIR}/output.config.json"
 USER_MEDIA_CONFIG="${USER_CONFIG_DIR}/media.json"
 DEFAULT_OUTPUT_CONFIG="${APP_DIR}/web/output.config.json"
 DEFAULT_MEDIA_CONFIG="${APP_DIR}/web/media/media.json"
-RICE1_PACK_URL="${JAXABSTRACT_RICE1_PACK_URL:-https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json}"
 
 RUN_NPM_INSTALL=1
 INSTALL_DESKTOP=1
 CHECK_DEPS=1
 PACK="fresh"
+RICE_PACK_URL=""
 RESET_CONFIG=0
 UNINSTALL=0
 
@@ -37,8 +37,7 @@ Installs jaxabstract-output for the current Linux user.
 
 options:
   --bin-dir DIR          install command launcher here (default: ~/.local/bin)
-  --with-rice1           install Damian's rice1 media pack as the active media pack
-  --rice1-url URL        download rice1 from this URL instead of the default release asset
+  --with-rice URL        install a remote rice/media pack JSON as the active media pack
   --fresh                install clean starter config with no media pack (default)
   --reset-config         overwrite existing jaxabstract user config for the chosen pack
   --no-desktop          skip the .desktop application launcher
@@ -74,13 +73,13 @@ while [ "$#" -gt 0 ]; do
       INSTALL_DESKTOP=0
       shift
       ;;
-    --with-rice1)
-      PACK="rice1"
-      shift
-      ;;
-    --rice1-url)
-      [ "$#" -ge 2 ] || die "--rice1-url needs a value"
-      RICE1_PACK_URL="$2"
+    --with-rice)
+      [ "$#" -ge 2 ] || die "--with-rice needs a URL"
+      case "$2" in
+        -*) die "--with-rice needs a URL" ;;
+      esac
+      PACK="rice"
+      RICE_PACK_URL="$2"
       shift 2
       ;;
     --fresh)
@@ -149,20 +148,22 @@ download_file() {
   die "curl or wget is required to download optional packs"
 }
 
-install_rice1_pack() {
+install_rice_pack() {
   local tmp
   tmp="$(mktemp)"
 
-  printf 'downloading rice1 pack: %s\n' "$RICE1_PACK_URL"
-  download_file "$RICE1_PACK_URL" "$tmp"
+  printf 'downloading rice pack: %s\n' "$RICE_PACK_URL"
+  download_file "$RICE_PACK_URL" "$tmp"
 
   node - "$tmp" <<'NODE'
 const fs = require('node:fs');
 const path = process.argv[2];
 const pack = JSON.parse(fs.readFileSync(path, 'utf8'));
-if (pack.default_profile !== 'rice1') throw new Error('rice1 pack default_profile must be rice1');
-if (!pack.profiles || !pack.profiles.rice1) throw new Error('rice1 profile missing');
-if (!Array.isArray(pack.media)) throw new Error('rice1 media must be an array');
+if (!Array.isArray(pack.media)) throw new Error('rice pack media must be an array');
+if (pack.profiles != null && typeof pack.profiles !== 'object') throw new Error('rice pack profiles must be an object');
+if (pack.default_profile && !pack.profiles?.[pack.default_profile]) {
+  throw new Error(`rice pack default_profile missing from profiles: ${pack.default_profile}`);
+}
 NODE
 
   cp "$tmp" "$USER_MEDIA_CONFIG"
@@ -232,21 +233,26 @@ write_user_config() {
   fi
 
   case "$PACK" in
-    rice1)
-      install_rice1_pack
-      node - "$USER_OUTPUT_CONFIG" <<'NODE'
+    rice)
+      install_rice_pack
+      node - "$USER_OUTPUT_CONFIG" "$USER_MEDIA_CONFIG" <<'NODE'
 const fs = require('node:fs');
 const configPath = process.argv[2];
+const mediaPath = process.argv[3];
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-config.profile = 'rice1';
+const media = JSON.parse(fs.readFileSync(mediaPath, 'utf8'));
+const profile = media.default_profile || Object.keys(media.profiles || {})[0] || null;
+config.profile = profile;
 config.profiles = config.profiles || {};
-config.profiles.rice1 = config.profiles.rice1 || {};
-config.profiles.rice1.shaders = config.profiles.rice1.shaders || {
-  allow_random: true,
-  allow: [],
-  deny: [],
-  favorites: {}
-};
+if (profile) {
+  config.profiles[profile] = config.profiles[profile] || {};
+  config.profiles[profile].shaders = config.profiles[profile].shaders || {
+    allow_random: true,
+    allow: [],
+    deny: [],
+    favorites: {}
+  };
+}
 fs.writeFileSync(configPath, JSON.stringify(config, null, 2) + '\n');
 NODE
       ;;
@@ -294,6 +300,9 @@ main() {
   printf 'config: %s\n' "$USER_OUTPUT_CONFIG"
   printf 'media config: %s\n' "$USER_MEDIA_CONFIG"
   printf 'media pack: %s\n' "$PACK"
+  if [ "$PACK" = "rice" ]; then
+    printf 'media pack url: %s\n' "$RICE_PACK_URL"
+  fi
 
   case ":${PATH}:" in
     *":${BIN_DIR}:"*) ;;
