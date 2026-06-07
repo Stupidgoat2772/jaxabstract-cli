@@ -1,11 +1,12 @@
 [package]
-name = "jaxabstract-output"
+name = "jaxabstract"
 version = "0.1.0"
 description = "Jaxabstract output host"
 edition = "2021"
+license = "0BSD"
 
 [[bin]]
-name = "jaxabstract-output"
+name = "jaxabstract"
 path = "src/main.rs"
 
 [build-dependencies]

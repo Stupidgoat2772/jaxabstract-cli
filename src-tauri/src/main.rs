@@ -355,7 +355,7 @@ fn command_file_path() -> PathBuf {
     env::var_os("XDG_RUNTIME_DIR")
         .map(PathBuf::from)
         .unwrap_or_else(|| env::temp_dir())
-        .join(format!("jaxabstract-output-{}.commands", std::process::id()))
+        .join(format!("jaxabstract-{}.commands", std::process::id()))
 }
 
 fn output_config_path() -> PathBuf {
@@ -452,5 +452,5 @@ fn main() {
             save_output_config
         ])
         .run(tauri::generate_context!())
-        .expect("error while running jaxabstract output");
+        .expect("error while running jaxabstract");
 }

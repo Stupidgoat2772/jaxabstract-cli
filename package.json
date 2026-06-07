@@ -1,25 +1,27 @@
 {
-  "name": "jaxabstract-cli",
+  "name": "jaxabstract",
   "version": "0.1.0",
-  "description": "Jaxabstract CLI/output host: MilkDrop renderer, native audio, and transparent shell.",
-  "license": "MIT",
+  "description": "Jaxabstract: MilkDrop renderer, native audio, and transparent shell.",
+  "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Stupidgoat2772/jaxabstract-cli.git"
+    "url": "https://github.com/Stupidgoat2772/jaxabstract.git"
   },
   "bugs": {
-    "url": "https://github.com/Stupidgoat2772/jaxabstract-cli/issues"
+    "url": "https://github.com/Stupidgoat2772/jaxabstract/issues"
   },
-  "homepage": "https://github.com/Stupidgoat2772/jaxabstract-cli#readme",
+  "homepage": "https://github.com/Stupidgoat2772/jaxabstract#readme",
   "bin": {
-    "jaxabstract-output": "bin/jaxabstract-output.js"
+    "jaxabstract": "bin/jaxabstract.js"
   },
   "files": [
     "bin",
     "scripts",
     "src-tauri",
     "web",
-    "README.md"
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "scripts": {
     "start": "tauri dev",
@@ -28,7 +30,7 @@
     "tauri": "tauri",
     "install:linux": "bash scripts/install-linux.sh",
     "uninstall:linux": "bash scripts/install-linux.sh --uninstall",
-    "check": "node --check bin/jaxabstract-output.js && node --check web/app-output.js && node --check web/abstract.js && node --check web/engine/audio.js && node --check web/engine/overlay.js && cargo check --manifest-path src-tauri/Cargo.toml"
+    "check": "node --check bin/jaxabstract.js && node --check web/app-output.js && node --check web/abstract.js && node --check web/engine/audio.js && node --check web/engine/overlay.js && cargo check --manifest-path src-tauri/Cargo.toml"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.11.0",

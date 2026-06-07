@@ -25,7 +25,7 @@ impl std::error::Error for CliError {}
 
 fn main() {
     if let Err(err) = run() {
-        eprintln!("jaxabstract-cli: {err}");
+        eprintln!("jaxabstract-static: {err}");
         std::process::exit(1);
     }
 }
@@ -433,9 +433,9 @@ fn print_usage() {
     println!(
         "\
 usage:
-  jaxabstract-cli render-bg [--out path] [--width px] [--height px] [--seed n] [--strength 0..1]
-  jaxabstract-cli terminal auto|kitty|konsole [options] [-- command...]
-  jaxabstract-cli install-terminal kitty|konsole [options]
+  jaxabstract-static render-bg [--out path] [--width px] [--height px] [--seed n] [--strength 0..1]
+  jaxabstract-static terminal auto|kitty|konsole [options] [-- command...]
+  jaxabstract-static install-terminal kitty|konsole [options]
 
 options:
   --out path       background PNG path, default: XDG cache

@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "jaxabstract output",
+  "productName": "jaxabstract",
   "version": "0.1.0",
-  "identifier": "local.kumo.jaxabstract-output",
+  "identifier": "app.jaxabstract",
   "build": {
     "frontendDist": "../web"
   },
@@ -10,7 +10,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "jaxabstract output",
+        "title": "jaxabstract",
         "url": "output.html",
         "width": 1280,
         "height": 720,

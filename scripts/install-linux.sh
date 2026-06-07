@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_ID="local.kumo.jaxabstract-output"
-APP_NAME="Jaxabstract Output"
-BIN_NAME="jaxabstract-output"
+APP_ID="app.jaxabstract"
+APP_NAME="Jaxabstract"
+BIN_NAME="jaxabstract"
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 APP_DIR="$(cd -- "$SCRIPT_DIR/.." && pwd)"
@@ -33,7 +33,7 @@ usage() {
 usage: npm run install:linux -- [options]
        scripts/install-linux.sh [options]
 
-Installs jaxabstract-output for the current Linux user.
+Installs jaxabstract for the current Linux user.
 
 options:
   --bin-dir DIR          install command launcher here (default: ~/.local/bin)
@@ -189,8 +189,8 @@ set -euo pipefail
 APP_DIR='${APP_DIR}'
 cd "\$APP_DIR"
 
-if [ -x "\$APP_DIR/src-tauri/target/release/jaxabstract-output" ]; then
-  exec "\$APP_DIR/src-tauri/target/release/jaxabstract-output" "\$@"
+if [ -x "\$APP_DIR/src-tauri/target/release/jaxabstract" ]; then
+  exec "\$APP_DIR/src-tauri/target/release/jaxabstract" "\$@"
 fi
 
 exec npm run output -- "\$@"
@@ -215,7 +215,7 @@ Icon=${ICON_FILE}
 Terminal=false
 Categories=Utility;AudioVideo;
 StartupNotify=true
-StartupWMClass=jaxabstract output
+StartupWMClass=jaxabstract
 EOF
 
   chmod 0644 "$DESKTOP_FILE"

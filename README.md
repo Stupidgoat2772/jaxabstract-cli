@@ -1,9 +1,8 @@
-# jaxabstract-cli
+# jaxabstract
 
-Jaxabstract-cli is a Linux output host for jaxabstract: a MilkDrop-style
-audio-reactive visualizer with an embedded transparent shell. The app is built
-with Tauri, runs the normal user shell in a PTY, and renders jaxabstract behind
-the terminal text.
+Jaxabstract is a Linux-native MilkDrop-style audio-reactive visualizer with an
+embedded transparent shell. The app is built with Tauri, runs the normal user
+shell in a PTY, and renders jaxabstract behind the terminal text.
 
 The default install starts fresh: shader output only, no media pack. Damian's
 `rice1` profile is an optional remote pack. It is not included in the package
@@ -50,16 +49,16 @@ is missing.
 Clone the repo, then run:
 
 ```bash
-git clone https://github.com/Stupidgoat2772/jaxabstract-cli.git
-cd jaxabstract-cli
+git clone https://github.com/Stupidgoat2772/jaxabstract.git
+cd jaxabstract
 npm install
 npm run install:linux
 ```
 
 That installs:
 
-- command launcher: `~/.local/bin/jaxabstract-output`
-- desktop launcher: `~/.local/share/applications/local.kumo.jaxabstract-output.desktop`
+- command launcher: `~/.local/bin/jaxabstract`
+- desktop launcher: `~/.local/share/applications/app.jaxabstract.desktop`
 - user config: `~/.config/jaxabstract/output.config.json`
 - user media config: `~/.config/jaxabstract/media.json`
 
@@ -75,10 +74,10 @@ export PATH="$HOME/.local/bin:$PATH"
 Then launch:
 
 ```bash
-jaxabstract-output
+jaxabstract
 ```
 
-Or open **Jaxabstract Output** from the desktop launcher.
+Or open **Jaxabstract** from the desktop launcher.
 
 ## Optional Rice Packs
 
@@ -97,7 +96,7 @@ npm run install:linux -- --with-rice https://example.com/media.json
 Example using Damian's `rice1` pack:
 
 ```bash
-npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json
+npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract/packs/rice1.json
 ```
 
 Reset an existing install to clean starter config:
@@ -109,7 +108,7 @@ npm run install:linux -- --fresh --reset-config
 Reset an existing install to `rice1`:
 
 ```bash
-npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json --reset-config
+npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract/packs/rice1.json --reset-config
 ```
 
 Without `--reset-config`, the installer preserves existing user config where it
@@ -133,7 +132,7 @@ npm run output
 ```
 
 `npm run output` runs `tauri dev`. The installed launcher prefers a compiled
-release binary if one exists at `src-tauri/target/release/jaxabstract-output`;
+release binary if one exists at `src-tauri/target/release/jaxabstract`;
 otherwise it falls back to `npm run output`.
 
 Build a release binary:
@@ -141,6 +140,16 @@ Build a release binary:
 ```bash
 npm run build
 ```
+
+## Terminal Emulator
+
+The embedded terminal uses xterm.js (`@xterm/xterm`) for terminal emulation in
+the Tauri WebView. A Rust `portable-pty` backend opens a real pseudoterminal and
+starts the user's `$SHELL`.
+
+This is not Kitty or Konsole internally. Kitty/Konsole support only exists in
+the older static terminal-background helpers. Native PTY sessions set
+`TERM=xterm-256color` and `COLORTERM=truecolor`.
 
 ## Config Files
 
@@ -368,7 +377,7 @@ jaxabstract:locked
 
 ## Static Terminal Background Helpers
 
-The Rust CLI still includes static background helpers:
+The Rust CLI still includes older static background helpers:
 
 ```bash
 cargo run -- terminal auto
@@ -381,6 +390,14 @@ cargo run -- install-terminal konsole
 These generate a still jaxabstract-style background and wire it into Kitty or
 Konsole. The Tauri output host is the main path for live shaders, media, native
 audio, and the embedded shell.
+
+## License
+
+Jaxabstract's original code is licensed under 0BSD. You can use, modify,
+redistribute, and sell it without attribution requirements from this project.
+
+Third-party dependencies and vendored runtime files keep their own licenses.
+See `THIRD_PARTY_NOTICES.md` for the current dependency/license summary.
 
 ## Known Limits
 

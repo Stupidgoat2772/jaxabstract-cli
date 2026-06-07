@@ -1,11 +1,12 @@
 [package]
-name = "jaxabstract-cli"
+name = "jaxabstract-static"
 version = "0.1.0"
 edition = "2021"
 description = "Audio-reactive terminal visualizer. ASCII and sixel/kitty modes. TUI-injectable."
+license = "0BSD"
 
 [[bin]]
-name = "jaxabstract-cli"
+name = "jaxabstract-static"
 path = "src/main.rs"
 
 [lib]

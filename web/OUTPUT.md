@@ -1,6 +1,6 @@
 # Jaxabstract Output Host
 
-`output.html` is the renderer surface used by `jaxabstract-cli`. It is not a
+`output.html` is the renderer surface used by Jaxabstract. It is not a
 control UI. It hosts the MilkDrop/butterchurn renderer, native app bridge,
 optional media overlays, and the terminal background surface.
 
@@ -15,7 +15,7 @@ For Linux user install:
 
 ```bash
 npm run install:linux
-jaxabstract-output
+jaxabstract
 ```
 
 The Linux desktop launcher is a `.desktop` entry installed to
@@ -38,7 +38,7 @@ npm run install:linux -- --with-rice https://example.com/media.json
 Example using Damian's `rice1` pack:
 
 ```bash
-npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract-cli/packs/rice1.json
+npm run install:linux -- --with-rice https://raw.githubusercontent.com/Stupidgoat2772/jaxabstract/packs/rice1.json
 ```
 
 Reset config back to a clean install:
@@ -50,8 +50,8 @@ npm run install:linux -- --fresh --reset-config
 The installer writes:
 
 ```text
-~/.local/bin/jaxabstract-output
-~/.local/share/applications/local.kumo.jaxabstract-output.desktop
+~/.local/bin/jaxabstract
+~/.local/share/applications/app.jaxabstract.desktop
 ~/.config/jaxabstract/output.config.json
 ~/.config/jaxabstract/media.json
 ```
@@ -206,6 +206,16 @@ mic
 In the Tauri app, `native` reads the default PulseAudio/PipeWire monitor through
 the Rust backend. In a normal browser, `system` and `mic` use browser media APIs
 and may require prompts.
+
+## Terminal Emulator
+
+The embedded shell uses xterm.js (`@xterm/xterm`) for terminal emulation in the
+Tauri WebView. A Rust `portable-pty` backend opens a real pseudoterminal and
+starts the user's `$SHELL`, with `TERM=xterm-256color` and
+`COLORTERM=truecolor`.
+
+Kitty and Konsole are not embedded terminal engines here. They are only targets
+for the older static background helper commands.
 
 ## Shell Commands
 
